@@ -1,47 +1,36 @@
 # SOC Automation Suite
 
-Python-based security automation toolkit for SOC analysts and blue teams. Designed to automate repetitive L1 SOC tasks.
+A collection of Python-based automation tools designed for Security Operations Center (SOC) L1 tasks. This project demonstrates practical application of programming in cybersecurity.
+
+## Why I Built This
+I'm an MCA student with  exposure to Java, Python, and Web Development. I built this SOC Automation Suite to explore cybersecurity and apply my Programming fundamentals to real-world security problems. This project bridges my coding knowledge with Blue Team operations.
 
 ## Tools Included
 
 ### 1. SSH Brute Force Detector
-Monitors `/var/log/auth.log` to identify SSH brute force attempts in real-time. Flags IPs exceeding 5 failed login attempts and generates alerts for IP blocking.
+Monitors `/var/log/auth.log` for repeated failed SSH login attempts. Flags potential brute-force attacks and extracts malicious IP addresses using Regex.
 
-**Key Features:**
-- Log parsing using regex
-- Configurable threshold for failed attempts
-- Timestamped alert generation
+**Tech Used:** Python, Regular Expressions
 
-**Use Case:** SOC L1 monitoring, SIEM rule prototyping, incident response triage.
+### 2. Multithreaded Port Scanner
+Scans a target IP for open TCP ports using multithreading for faster network reconnaissance. Helps in identifying exposed services during asset discovery.
 
-### 2. Port Scanner
-Multithreaded TCP connect scanner for fast network reconnaissance. Identifies open ports on target hosts to support asset discovery.
+**Tech Used:** Python, Socket Programming, Multithreading
 
-**Key Features:**
-- Multithreading for speed
-- Scans common ports 1-1024
-- Clean CLI output
+## Getting Started
 
-**Use Case:** Network auditing, vulnerability assessment, pre-engagement recon.
+### Prerequisites
+- Python 3.x
+- Linux environment for log monitoring (Kali/Ubuntu recommended)
 
-## Tech Stack
-- **Language:** Python 3
-- **Core Libraries:** socket, threading, re, datetime
-- **Platform:** Linux / Kali Linux
-
-## Setup & Usage
+### Installation
 ```bash
-# Clone repo
-git clone https://github.com/Karki520/SOC-Automation-Suite
-
-# Run SSH detector
-sudo python3 ssh_brute_detector.py
-
-# Run port scanner
-python3 port_scanner.py <target_ip>
-
+git clone https://github.com/Karki520/SOC-Automation-Suite.git
+cd SOC-Automation-Suite
 ## Disclaimer
-For educational and authorized security testing only. Use only on networks you own or have explicit permission to test.
+These tools are developed for educational purposes and authorized security testing only. The author is not responsible for any misuse or damage caused by these scripts. Always obtain proper authorization before scanning networks or systems you do not own.
 
 ## Author
-pooja karki| Aspiring SOC Analyst | Cybersecurity Enthusiast
+pooja karki  
+MCA Graduate | Programming & Cybersecurity Enthusiast  
+Open to SDE & SOC Analyst roles
