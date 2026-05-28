@@ -1,0 +1,52 @@
+Linux Fundamentals Part 1 - My Notes
+
+Completed the "Linux Fundamentals Part 1" room on TryHackMe. Here’s what I actually learned:
+
+1. What is Linux & Why Use It
+   Linux is just another OS like Windows or MacOS. But it’s way more popular for servers, Android, smart cars, traffic lights, supercomputers. 
+   Main reason: It’s lightweight, open-source, and stable. Ubuntu Server can run on just 512MB RAM.
+   Linux = umbrella term. Lots of "flavours" or distros based on UNIX. Ubuntu & Debian are most common. We used Ubuntu in this room.
+
+2. Where You Interact: The Terminal
+   No GUI on most servers. You use the "Terminal" - a pure text-based interface. 
+   Looks scary at first: tryhackme@linux1:~$ 
+   But it’s just a place to type commands. Once you know 5-6 commands, it feels normal.
+
+3. First 2 Commands I Learned
+   echo: Prints whatever text I give it. Example: echo "hello" -> prints hello
+   whoami: Tells me which user I’m currently logged in as. Super useful if you use sudo or switch users.
+
+4. Navigating the Filesystem - Most Important Part
+   In Linux, everything is a file. To move around I used:
+   ls: listing - shows all files/folders in current directory
+   cd: change directory - moves me into a folder. Example: cd Desktop
+   pwd: print working directory - tells me where I am right now
+   cat: concatenate - used to read contents of a file. Example: cat notes.txt
+
+   Trick: Directories can have directories inside them. So you go deeper with cd folder1/folder2
+
+5. Finding Stuff with 'find'
+   Instead of clicking through folders like Windows, use find.
+   If I know the name: find -name passwords.txt
+   It searches all subfolders and gives path: ./folder1/passwords.txt
+   If I only know extension: find -name "*.txt" 
+   The * is a wildcard. Means "anything". So it finds all .txt files.
+
+6. Shell Operators - Level Up Your Commands
+   & : Runs command in background. Good for long tasks so terminal doesn’t freeze.
+   && : Run second command only if first one succeeds. Example: cd folder1 && ls
+   > : Redirector. Takes output of a command and puts it in a file. Overwrites file. Example: echo "hi" > new.txt
+   >> : Same as > but it appends instead of overwriting. Safer. Example: echo "line2" >> new.txt
+
+7. The Lab Machine Stuff
+   THM gives an in-browser Ubuntu machine. Click "Start Lab Machine". 
+   You get IP, expiry time. Important: Click "Terminate" when done or it eats your free hours.
+   IP was 10.10.144.238 in my case. Used for SSH but here we used browser terminal.
+
+8. Key Takeaways from Part 1
+   - Learned why Linux is everywhere even if we don’t see it.
+   - Got comfortable with terminal basics. No mouse needed.
+   - echo, whoami, ls, cd, pwd, cat, find are the bread and butter.
+   - Operators like && and >> save time and make you look pro.
+   - Next step is Linux Fundamentals Part 2 for more commands.
+
